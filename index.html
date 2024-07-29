@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using OpenLayers with Vite</title>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    <form id="coordinateForm" style="display: none;">
+        <input type="text" id="Name" placeholder="Enter coordinate name" required>
+    </form>
+    <header class="header">
+        <button id="addCoordinateBtn" class="logo">Add Coordinate</button>
+        <button id="searchCoordinateBtn" class="logo">Search Coordinate</button>
+        <button id="getAllBtn" class="logo">Get All Coordinates</button>
+        <form>
+            <select id="geometryType" class="logo">
+                <option value="None">Select geometry type</option>
+                <option value="Point">Point</option>
+                <option value="LineString">LineString</option>
+                <option value="Polygon">Polygon</option>
+            </select>
+        </form>
+    </header>
+    <div id="map"></div>
+
+    <!-- Search Coordinate Modal -->
+    <div id="searchCoordinateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="searchCoordinateForm">
+                <input type="text" id="searchName" placeholder="Enter point name">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Update Coordinate Modal -->
+    <div id="updateCoordinateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Coordinate</h2>
+            <form id="updateCoordinateForm">
+                <label for="updateX">X:</label>
+                <input type="text" id="updateX" name="updateX" required>
+                <label for="updateY">Y:</label>
+                <input type="text" id="updateY" name="updateY" required>
+                <label for="updateName">Name:</label>
+                <input type="text" id="updateName" name="updateName" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="coordinatesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCoordinatesModal()">&times;</span>
+            <h2>Data Table</h2>
+            <div id="tableContainer">
+                <table id="coordinatesTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+</body>
+</html>

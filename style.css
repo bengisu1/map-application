@@ -1,0 +1,239 @@
+/*@import "node_modules/ol/ol.css";*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+#map {
+    position: relative;
+    height: calc(100%);
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(247, 0, 255);
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#coordinateFormContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+#coordinateForm {
+    background: pink;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.ol-popup {
+    position: absolute;
+    background-color: #f0f8ff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+}
+
+    .ol-popup:after,
+    .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .ol-popup:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #f0f8ff;
+        border-width: 10px;
+        left: 48px;
+        margin-left: -10px;
+    }
+
+    .ol-popup:before {
+        border-color: rgba(204, 204, 204, 0);
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 48px;
+        margin-left: -11px;
+    }
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    font-size: 16px;
+}
+
+.coordinate-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: deeppink;
+    margin-bottom: 5px;
+}
+
+.coordinate-xy {
+    font-size: 14px;
+    color: purple;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#delete-btn {
+    background-color: #FFC0CB;
+    color: purple;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+    #delete-btn:hover {
+        background-color: #FF69B4;
+    }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: pink;
+    margin: 5% auto;
+    padding: 5px;
+    border: 5px solid #e989f7;
+    width: 40%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+#update-btn, #drag-update-btn {
+    background-color: #FFC0CB;
+    color: purple;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+    #update-btn:hover, #drag-update-btn:hover {
+        background-color: #FF69B4;
+    }
+
+#updateCoordinateModal {
+    z-index: 1001;
+}
+
+#coordinatesTable .zoom-btn,
+#coordinatesTable .delete-btn,
+#coordinatesTable .update-btn {
+    background-color: #FFC0CB;
+    color: purple;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    #coordinatesTable .zoom-btn:hover,
+    #coordinatesTable .delete-btn:hover,
+    #coordinatesTable .update-btn:hover {
+        background-color: #FF69B4;
+    }
+
+#coordinatesTable .zoom-btn {
+    background-color: #FFB6C1;
+}
+
+#coordinatesTable .delete-btn {
+    background-color: #FFA07A;
+}
+
+#coordinatesTable .update-btn {
+    background-color: #DDA0DD;
+}
+
+#coordinatesTable {
+    width: 100% !important;
+}
+
+#tableContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
+}

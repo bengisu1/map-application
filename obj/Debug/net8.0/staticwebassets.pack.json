@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\tugru\\source\\repos\\staj\\staj\\wwwroot\\Class.js",
+      "PackagePath": "staticwebassets\\Class.js"
+    },
+    {
+      "Id": "C:\\Users\\tugru\\source\\repos\\staj\\staj\\wwwroot\\icon.PNG",
+      "PackagePath": "staticwebassets\\icon.PNG"
+    },
+    {
+      "Id": "C:\\Users\\tugru\\source\\repos\\staj\\staj\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\tugru\\source\\repos\\staj\\staj\\wwwroot\\main.js",
+      "PackagePath": "staticwebassets\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\tugru\\source\\repos\\staj\\staj\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.staj.props",
+      "PackagePath": "build\\staj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.staj.props",
+      "PackagePath": "buildMultiTargeting\\staj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.staj.props",
+      "PackagePath": "buildTransitive\\staj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.staj.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
